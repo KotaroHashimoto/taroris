@@ -1,12 +1,5 @@
-const canvas = document.createElement('canvas');
-canvas.width = 400;
-canvas.height = 600;
-canvas.style.backgroundColor = 'black';
-document.body.appendChild(canvas);
-
 const ctx = canvas.getContext('2d');
 ctx.strokeStyle = 'white';
-
 
 class Figure {
 
@@ -143,6 +136,23 @@ class Board {
         
             this.cf.rotate = this.cf.rotate % 360; 
         });
+
+        document.getElementById("left-button").onclick = function() {
+            if (!board.cf.leftBound) {
+                board.cf.cx -= Figure.SIZE;
+            }
+        };
+        document.getElementById("right-button").onclick = function() {
+            if (!board.cf.rightBound) {
+                board.cf.cx += Figure.SIZE;
+            }
+        };
+        document.getElementById("up-button").onclick = function() {
+            board.cf.rotate += 90;
+        };
+        document.getElementById("down-button").onclick = function() {
+            board.cf.cy += Figure.SIZE;
+        };
     }
 
     touched() {

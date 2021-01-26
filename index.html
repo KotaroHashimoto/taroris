@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>taroris</title>
 </head>
 <body>
-    <script src="app.js"></script>
-    <br>
+    <script>
+        const canvas = document.createElement('canvas');
+        canvas.width = 400;
+        canvas.height = 600;
+        canvas.style.backgroundColor = 'black';
+        canvas.id = "canvas"
+        canvas.class = "wrapper";
+        document.body.appendChild(canvas);
+
+        var w = $('.wrapper').width();
+        var h = $('.wrapper').height();
+        $('#canvas').attr('width', w);
+        $('#canvas').attr('height', h);
+    </script>
+
+    <div class="flex">
+        <button type="button" id="left-button">←</button>
+        <button type="button" id="up-button">↑</button>
+        <button type="button" id="down-button">↓</button>
+        <button type="button" id="right-button">→</button>
+    </div>
     <audio controls autoplay loop>
         <source src="pita.mp3" type="audio/mpeg">
     </audio>    
+
+    <script src="app.js"></script>
 </body>
 </html>
