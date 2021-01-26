@@ -1,6 +1,7 @@
 .flex{
     display: flex;/*コレ*/
     padding: 10px;
+    touch-action:  manipulation;
 }
 .flex button{
     width: 50%;
@@ -11,4 +12,8 @@
 .wrapper{
     width: 95%;
     height: 95%;
+}
+
+
+img{
 }
